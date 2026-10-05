@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --background: #f3f1eb;
+  --foreground: #1c211e;
+  --surface: #fffcf7;
+  --surface-muted: #f6f3ec;
+  --border: #e4ddd2;
+  --muted: #6d675f;
+  --accent: #1e6b45;
+  --accent-foreground: #f4fbf6;
+  --accent-soft: #e5f3ea;
+  --positive: #1b7a45;
+  --negative: #a33b32;
+  --warning: #9a6416;
+  --warning-soft: #f8f0e2;
+  --negative-soft: #f8e8e6;
+  --sidebar: #17211c;
+  --sidebar-foreground: #e7eee9;
+  --sidebar-muted: #9aab9f;
+  --sidebar-active: rgb(255 255 255 / 0.08);
+  --chart-1: #1e6b45;
+  --chart-2: #b0893e;
+  --chart-3: #3d6d8c;
+  --chart-4: #8d5b3c;
+  --chart-5: #5d6b4e;
+  --shadow: 23 33 28;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #101412;
+  --foreground: #e8eee9;
+  --surface: #181d1a;
+  --surface-muted: #212823;
+  --border: #2d3832;
+  --muted: #a3aea6;
+  --accent: #3cba7a;
+  --accent-foreground: #062214;
+  --accent-soft: #173528;
+  --positive: #6ee7a8;
+  --negative: #f0a097;
+  --warning: #e3b15a;
+  --warning-soft: #2c2418;
+  --negative-soft: #2c1c1a;
+  --sidebar: #0c100e;
+  --sidebar-foreground: #e7eee9;
+  --sidebar-muted: #8b9a90;
+  --sidebar-active: rgb(255 255 255 / 0.06);
+  --chart-1: #3cba7a;
+  --chart-2: #d4b56a;
+  --chart-3: #7eb0d4;
+  --chart-4: #d4a07e;
+  --chart-5: #a3b48a;
+  --shadow: 0 0 0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-negative-soft: var(--negative-soft);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
